@@ -71,7 +71,7 @@ ALTER TABLE shipping_db.neighborhood ADD CONSTRAINT fk_neighborhood_city_id FORE
 
 --definition
 CREATE TABLE shipping_db.address_orders (
-	address_id int8 NOT NULL,
+	address_id bigserial NOT NULL,
 	street varchar NULL,
 	"number" varchar NULL,
 	address_string varchar NULL,
@@ -90,7 +90,7 @@ CREATE INDEX address_orders_nbhd_id_idx ON shipping_db.address_orders USING btre
 
 --definition
 CREATE TABLE shipping_db.shipment_order (
-	order_id int8 NOT NULL,
+	order_id bigserial NOT NULL,
 	weight float4 NOT NULL,
 	dimension varchar NOT NULL,
 	package_type_id int4 NOT NULL,
@@ -108,12 +108,16 @@ ALTER TABLE shipping_db.shipment_order ADD CONSTRAINT fk_shipment_order_sender_a
 ALTER TABLE shipping_db.shipment_order ADD CONSTRAINT fk_shipment_order_receiver_address_id FOREIGN KEY (receiver_address_id) REFERENCES shipping_db.address_orders(address_id);
 ALTER TABLE shipping_db.shipment_order ADD CONSTRAINT fk_shipment_order_shipment_type_id FOREIGN KEY (shipment_type_id) REFERENCES shipping_db.shipment_type(shipment_type_id);
 
+--indexes
+CREATE INDEX shipment_order_sender_address_id_idx ON shipping_db.shipment_order USING btree (sender_address_id);
+CREATE INDEX shipment_order_receiver_address_id_idx ON shipping_db.shipment_order USING btree (receiver_address_id);
+
 
 --shipping_db.status--
 
 --definition
 CREATE TABLE shipping_db.status (
-	status_id int8 NOT NULL,
+	status_id bigserial NOT NULL,
 	status_catalog_id int4 NOT NULL,
 	order_id int8 NOT NULL,
 	registered_at timestamp(0) NOT NULL,
