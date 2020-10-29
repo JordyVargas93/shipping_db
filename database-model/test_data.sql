@@ -45,4 +45,4 @@ VALUES(1, 'Orden recibida');
 -- Add test status
 INSERT INTO shipping_db.status
 (status_catalog_id, order_id, registered_at, notes)
-VALUES(1, 1, '2023-04-12 04:05:06', 'EMPTY');
+VALUES(1, 1, '2020-04-12 04:05:06', 'EMPTY');
