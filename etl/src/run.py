@@ -6,7 +6,7 @@ etl = __import__(app.etl)
 
 # Extraction
 raw_data = etl.extract()
-# Trans
+# Transform
 processed_data = etl.transform(raw_data)
 # Load
 etl.load(processed_data)
