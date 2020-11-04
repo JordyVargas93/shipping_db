@@ -31,4 +31,4 @@
   > python run.py --etl=status_time
 
 - Aggregated tables:
-  - You can find example queries for analysis using aggregated tables and dimensions: origin, destination, package_type and shipment_type
+  - You can find [example queries](https://github.com/JordyVargas93/shipping_db/blob/main/sql/analysis.sql) for analysis using aggregated tables and dimensions: origin, destination, package_type and shipment_type
