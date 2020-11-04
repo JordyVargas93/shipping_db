@@ -21,5 +21,7 @@
   - Go to etl/src
   - Use the *etl* param to indicate the ETL to execute:
   > python run.py --etl=routes_recurrency
+  
   > python run.py --etl=routes_time
+  
   > python run.py --etl=status_time
