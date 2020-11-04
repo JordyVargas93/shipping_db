@@ -13,4 +13,7 @@
 
 - You can find the code of the ETLs [here](https://github.com/JordyVargas93/shipping_db/tree/main/etl)
 - **Requirements**
-  > Python 3
+  - Python 3
+  - Install the [requirements](https://github.com/JordyVargas93/shipping_db/blob/main/etl/requirements.txt) with *pip*
+  > pip install -r requirements.txt
+- Run it!
