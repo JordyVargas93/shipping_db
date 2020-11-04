@@ -1,4 +1,5 @@
 import argparse
+import os
 
 etl = None
 
@@ -18,3 +19,6 @@ def __set_arguments():
 
 def init():
     __set_arguments()
+    abspath = os.path.abspath(__file__)
+    dname = os.path.dirname(abspath)
+    os.chdir(dname)
